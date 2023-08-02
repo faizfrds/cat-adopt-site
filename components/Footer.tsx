@@ -14,7 +14,7 @@ export default function Footer() {
                   alt="FlowBite Logo"
                 />
                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                  Flowbite
+                  Cats4You
                 </span>
               </a>
             </div>
@@ -26,7 +26,7 @@ export default function Footer() {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <a href="https://flowbite.com/" className="hover:underline">
-                      Flowbite
+                      Guide
                     </a>
                   </li>
                   <li>
@@ -34,7 +34,7 @@ export default function Footer() {
                       href="https://tailwindcss.com/"
                       className="hover:underline"
                     >
-                      Tailwind CSS
+                      FAQ
                     </a>
                   </li>
                 </ul>
@@ -49,7 +49,7 @@ export default function Footer() {
                       href="https://github.com/themesberg/flowbite"
                       className="hover:underline "
                     >
-                      Github
+                      Instagram
                     </a>
                   </li>
                   <li>
@@ -57,7 +57,7 @@ export default function Footer() {
                       href="https://discord.gg/4eeurUVvTy"
                       className="hover:underline"
                     >
-                      Discord
+                      YouTube
                     </a>
                   </li>
                 </ul>
@@ -86,7 +86,7 @@ export default function Footer() {
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2023{" "}
               <a href="https://flowbite.com/" className="hover:underline">
-                Flowbite™
+                Cats4You™
               </a>
               . All Rights Reserved.
             </span>

@@ -1,8 +1,4 @@
-interface ShowcaseProps {
-  children: React.ReactNode;
-}
-
-const Showcase: React.FC<ShowcaseProps> = ({ children }) => {
+const Showcase = () => {
   const posts = [
     {
       title: "React Tailwind Card with Grid 1",

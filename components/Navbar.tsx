@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                   <>
                     <div>
                       <Button
-                        className="bg-transparent text-cyan-600"
+                        className="bg-transparent text-white"
                         onClick={authModal.onOpen}
                       >
                         Sign Up
@@ -167,28 +167,28 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                 size={30}/>
               </button>
               <div className="pl-20 mt-10 mb-10 text-3xl">
-                <div className="group py-7 flex items-center">
+                <button onClick={() => router.push("/Breeds")} className="group py-7 flex items-center">
                   Breeds
-                  <HiArrowSmRight className="group-hover:translate-x-2  transition" />
-                </div>
-                <div className="group py-7 flex items-center">
+                  <HiArrowSmRight/>
+                </button>
+                <button onClick={() => router.push("/AdoptTut")} className="group py-7 flex items-center">
                   How to Adopt
-                  <HiArrowSmRight className="group-hover:translate-x-2  transition" />
-                </div>
-                <div className="group py-7 flex items-center">
+                  <HiArrowSmRight/>
+                </button>
+                <button onClick={() => router.push("/Support")} className="group py-7 flex items-center">
                   More Support
-                  <HiArrowSmRight className="group-hover:translate-x-2  transition" />
-                </div>
+                  <HiArrowSmRight/>
+                </button>
               </div>
 
               {user ? (
-                <div className="mt-10 mb-10 text-3xl text-left">
+                <div className="bg-cyan-700 mt-10 mb-10 py-10 text-3xl text-left">
                   <Button onClick={handleLogout} className="bg-trasparent pb-7">
                     Logout
                   </Button>
                 </div>
               ) : (
-                <div className="mt-10 mb-10 text-3xl text-left">
+                <div className="bg-cyan-700 mt-10 py-10 mb-10 text-3xl text-left">
                   <Button
                     className="bg-transparent pb-7"
                     onClick={authModal.onOpen}
