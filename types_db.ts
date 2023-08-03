@@ -9,6 +9,37 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      cat: {
+        Row: {
+          created_at: string | null
+          id: number
+          image_path: string | null
+          name: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          image_path?: string | null
+          name?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          image_path?: string | null
+          name?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cat_user_id_fkey"
+            columns: ["user_id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       customers: {
         Row: {
           id: string
@@ -26,6 +57,37 @@ export interface Database {
           {
             foreignKeyName: "customers_id_fkey"
             columns: ["id"]
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      liked_cats: {
+        Row: {
+          cat_id: number
+          created_at: string | null
+          user_id: string
+        }
+        Insert: {
+          cat_id: number
+          created_at?: string | null
+          user_id: string
+        }
+        Update: {
+          cat_id?: number
+          created_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "liked_cats_cat_id_fkey"
+            columns: ["cat_id"]
+            referencedRelation: "cat"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "liked_cats_user_id_fkey"
+            columns: ["user_id"]
             referencedRelation: "users"
             referencedColumns: ["id"]
           }

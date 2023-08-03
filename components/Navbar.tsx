@@ -68,7 +68,10 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
 
   useLayoutEffect(() => {
     if (window.innerWidth > 1023) {
-      setIsOpen(true);
+      if (pathname !== "/") setIsOpen(false);
+      else {
+        setIsOpen(true);
+      }
     } else {
       setIsOpen(false);
     }
@@ -109,8 +112,9 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
             </div>
 
             <div className="flex gap-x-3 items-center">
-              <button className="flex rounded-full p-2 bg-black justify-center hover:opacity-75 hover:scale-105 hover:bg-white transition text-white hover:text-red-500 gap-x-2">
+              <button className="flex rounded-full p-2 bg-black justify-center hover:scale-105 hover:bg-white transition text-white hover:text-red-500 gap-x-2">
                 <HiHeart onClick={checkLogin} size={25} />
+                
               </button>
 
               <button
@@ -143,6 +147,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                     <div>
                       <Button onClick={authModal.onOpen}>Login</Button>
                     </div>
+                    x
                   </>
                 </div>
               )}
@@ -154,9 +159,31 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
           <>
             <div className="hidden lg:flex justify-between absolute w-full h-fit mt-24 bg-cyan-600 text-white text-lg">
               <div className="w-8/12 flex justify-center py-4 gap-x-20 ml-5">
-                <p>Breeds</p>
-                <p>How to Adopt</p>
-                <p>More Support</p>
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    router.push("/cats");
+                  }}
+                >
+                  All Cats
+                </button>
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    router.push("/upload");
+                  }}
+                >
+                  Put Cat For Adoption
+                </button>
+
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    router.push("/");
+                  }}
+                >
+                  Support
+                </button>
               </div>
             </div>
 
@@ -164,20 +191,30 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
               <button onClick={() => setIsOpen((prev) => !prev)}>
                 <HiOutlineX
                   className="text-white absolute top-[30px] right-[30px] inline-flex appearance-none items-center justify-center rounded-full focus:outline"
-                size={30}/>
+                  size={30}
+                />
               </button>
               <div className="pl-20 mt-10 mb-10 text-3xl">
-                <button onClick={() => router.push("/Breeds")} className="group py-7 flex items-center">
+                <button
+                  onClick={() => router.push("/upload")}
+                  className="group py-7 flex items-center"
+                >
+                  Put Cat For Adoption
+                  <HiArrowSmRight />
+                </button>
+                <button
+                  onClick={() => router.push("/")}
+                  className="group py-7 flex items-center"
+                >
                   Breeds
-                  <HiArrowSmRight/>
+                  <HiArrowSmRight />
                 </button>
-                <button onClick={() => router.push("/AdoptTut")} className="group py-7 flex items-center">
-                  How to Adopt
-                  <HiArrowSmRight/>
-                </button>
-                <button onClick={() => router.push("/Support")} className="group py-7 flex items-center">
+                <button
+                  onClick={() => router.push("/")}
+                  className="group py-7 flex items-center"
+                >
                   More Support
-                  <HiArrowSmRight/>
+                  <HiArrowSmRight />
                 </button>
               </div>
 
