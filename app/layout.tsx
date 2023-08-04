@@ -5,7 +5,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
-import Showcase from "@/components/Showcase";
+import Showcase from "@/app/(site)/components/Showcase";
 import Footer from "@/components/Footer";
 import SupabaseProvider from "@/providers/SupabaseProvider";
 import UserProvider from "@/providers/UserProvider";

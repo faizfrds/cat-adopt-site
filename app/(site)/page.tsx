@@ -1,13 +1,18 @@
 import Header from "@/components/Header";
-import Showcase from "@/components/Showcase";
+import Showcase from "@/app/(site)/components/Showcase";
 
+import getCatHome from "@/actions/getCatHome";
 
-const Nav = () => {
-  return ( 
+export const revalidate = 0;
+
+const Home = async (abc: boolean) => {
+  const cats = await getCatHome();
+
+  return (
     <div>
-      <Showcase />
+      <Showcase cats={cats} />
     </div>
-   );
-}
- 
-export default Nav;
+  );
+};
+
+export default Home;

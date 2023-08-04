@@ -8,6 +8,7 @@ import FavButton from "./FavButton";
 import { useUser } from "@/hooks/useUser";
 import { useEffect, useState } from "react";
 import RemoveButton from "./RemoveButton";
+import { usePathname, useRouter } from "next/navigation";
 
 interface CatItemProps {
   cat: Cat;
@@ -17,12 +18,18 @@ interface CatItemProps {
 const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
   const imagePath = useLoadImage(cat);
   const [owner, setOwner] = useState(false);
+  const [button, setButtons] = useState(true);
   const { user } = useUser();
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (cat.user_id === user?.id) setOwner(true);
-    else {
-      setOwner(false);
+    if (pathname !== "/") {
+      if (cat.user_id === user?.id) setOwner(true);
+      else {
+        setOwner(false);
+      }
+    } else {
+      setButtons(false);
     }
   });
 
@@ -41,7 +48,9 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
       </div>
 
       <div className="flex flex-col items-start w-full lg:p-4 p-1 gap-y-1 text-cyan-700 text-bold bg-white">
-        <p className="font-semibold text-center w-full lg:text-3xl text-xl">{cat.name}</p>
+        <p className="font-semibold text-center w-full lg:text-3xl text-xl">
+          {cat.name}
+        </p>
         <p className="text-cyan-600/40 text-center w-full capitalize">
           age: {cat.age} • {cat.gender}
         </p>
@@ -49,14 +58,11 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
 
       {owner ? (
         <div>
-          <RemoveButton catId={cat.id}/>
-
+          <RemoveButton catId={cat.id} />
         </div>
       ) : (
         <FavButton catId={cat.id} />
       )}
-
-      
     </div>
   );
 };

@@ -20,7 +20,6 @@ import Header from "./Header";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
 import Link from "next/link";
-import HeaderState from "./HeaderState";
 
 interface NavbarProps {
   className?: string;
@@ -199,7 +198,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                   onClick={() => router.push("/upload")}
                   className="group py-7 flex items-center"
                 >
-                  Put Cat For Adoption
+                  Upload Adoption
                   <HiArrowSmRight />
                 </button>
                 <button
