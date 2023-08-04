@@ -9,7 +9,7 @@ const Home = async () => {
   const cats = await getCatHome();
 
   return (
-    <div>
+    <div className="flex justify-center">
       <Showcase cats={cats} />
     </div>
   );
