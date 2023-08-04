@@ -5,7 +5,7 @@ import getCatHome from "@/actions/getCatHome";
 
 export const revalidate = 0;
 
-const Home = async (abc: boolean) => {
+const Home = async () => {
   const cats = await getCatHome();
 
   return (
