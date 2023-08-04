@@ -2,6 +2,8 @@ import getCat from "@/actions/getCat";
 import React from "react";
 import PageListing from "@/components/PageListing";
 
+export const revalidate = 0;
+
 export default async function cats() {
   const cats = await getCat();
 
