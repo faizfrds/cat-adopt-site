@@ -4,6 +4,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 import { Cat } from "@/types/types"
 import getCat from "./getCat";
 
+
 //for fetching data
 
 const getCatByBreed = async (breed: string): Promise<Cat[]> => {
@@ -30,3 +31,5 @@ const getCatByBreed = async (breed: string): Promise<Cat[]> => {
 };
 
 export default getCatByBreed;
+
+export const dynamicParams = true;
