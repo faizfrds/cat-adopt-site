@@ -193,7 +193,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                   size={30}
                 />
               </button>
-              <div className="pl-20 mt-10 mb-10 text-3xl">
+              <div className="pl-12 mt-10 mb-10 text-3xl">
                 <button
                   onClick={() => router.push("/upload")}
                   className="group py-7 flex items-center"
