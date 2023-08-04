@@ -83,7 +83,7 @@ const FavButton: React.FC<FavButtonProps> = ({ catId }) => {
 
   return (
     <button
-      className="absolute top-3 right-2 bg-neutral-100/80 rounded-full p-2 text-red-500/90 hover:scale-105 hover:bg-white"
+      className=" lg:absolute lg:top-3 lg:right-2 rounded-full p-2 text-red-500/90 lg:bg-neutral-100/70 hover:scale-105 hover:bg-white"
       onClick={handleLike}
     >
       <Icon color="#f23359" size={30} />

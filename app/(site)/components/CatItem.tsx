@@ -23,7 +23,7 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
       onClick={() => onClick(cat.id)}
       className=" group flex flex-col rounded-md items-center overflow-hidden bg-neutral-400/5 cursor-pointer transition shadow-lg shadow-black md:h-[40vh] h-[35vh]"
     >
-      <div className="static h-full w-full">
+      <div className="static h-full w-full overflow-hidden">
         <img className="h-full w-full object-cover" src={imagePath || "/images/marquee-pic.jpeg"}/>
       </div>
 

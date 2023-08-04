@@ -41,7 +41,7 @@ const RemoveButton: React.FC<RemoveButtonProps> = ({ catId }) => {
 
   return (
     <button
-      className="absolute top-3 left-2 rounded-full p-2 text-white hover:scale-105 flex gap-x-2 bg-neutral-200/20 hover:bg-neutral-200/40"
+      className=" lg:absolute lg:top-3 lg:left-2 rounded-full p-2 text-white hover:scale-105 flex gap-x-2 hover:bg-neutral-200/40"
       onClick={handleDelete}
     >
       Remove

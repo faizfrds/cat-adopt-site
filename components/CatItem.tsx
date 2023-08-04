@@ -36,11 +36,9 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
   return (
     <div
       onClick={() => onClick(cat.id)}
-      className="relative group flex flex-col rounded-md items-center overflow-hidden bg-neutral-400/5 cursor-pointer transition shadow-lg shadow-black h-[40vh]"
+      className="lg:relative group flex flex-col rounded-md items-center overflow-hidden bg-neutral-400/20 cursor-pointer transition shadow-lg shadow-black h-[40vh]"
     >
-      <div className="relative aspect-square w-full h-full overflow-hidden">
-  
-
+      <div className="static w-full h-full overflow-hidden">
         <img src={imagePath || "/images/marquee-pic.jpeg"} className="object-cover w-full h-full" />
       </div>
 
@@ -58,7 +56,9 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
           <RemoveButton catId={cat.id} />
         </div>
       ) : (
+        
         <FavButton catId={cat.id} />
+        
       )}
     </div>
   );
