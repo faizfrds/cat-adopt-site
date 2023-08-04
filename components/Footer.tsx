@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="mb-6 md:mb-0">
               <a href="https://flowbite.com/" className="flex items-center">
                 <img
-                  src="https://flowbite.com/docs/images/logo.svg"
+                  src="/images/111.jpg"
                   className="h-8 mr-3"
                   alt="FlowBite Logo"
                 />
@@ -26,7 +26,7 @@ export default function Footer() {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <a href="/" className="hover:underline">
-                      Guide
+                      Adopting Guide
                     </a>
                   </li>
                   <li>
@@ -86,9 +86,8 @@ export default function Footer() {
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2023{" "}
               <a href="/" className="hover:underline">
-                Cats4You™
+                Cats4You - Created by Faiz Firdaus
               </a>
-              . All Rights Reserved.
             </span>
             <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
               <a
