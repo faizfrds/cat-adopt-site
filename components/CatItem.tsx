@@ -29,7 +29,7 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
   return (
     <div
       onClick={() => onClick(cat.id)}
-      className="relative group flex flex-col rounded-md items-center overflow-hidden gap-x-4 bg-neutral-400/5 cursor-pointer transition shadow-lg shadow-black h-[350px]"
+      className="relative group flex flex-col rounded-md items-center overflow-hidden bg-neutral-400/5 cursor-pointer transition shadow-lg shadow-black h-[40vh]"
     >
       <div className="relative aspect-square w-full h-full overflow-hidden">
         <Image
@@ -40,8 +40,8 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
         />
       </div>
 
-      <div className="flex flex-col items-start w-full p-4 gap-y-1 text-cyan-700 text-bold bg-white">
-        <p className="font-semibold text-center w-full text-3xl">{cat.name}</p>
+      <div className="flex flex-col items-start w-full lg:p-4 p-1 gap-y-1 text-cyan-700 text-bold bg-white">
+        <p className="font-semibold text-center w-full lg:text-3xl text-xl">{cat.name}</p>
         <p className="text-cyan-600/40 text-center w-full capitalize">
           age: {cat.age} • {cat.gender}
         </p>
@@ -50,12 +50,13 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
       {owner ? (
         <div>
           <RemoveButton catId={cat.id}/>
+
         </div>
       ) : (
-        <></>
+        <FavButton catId={cat.id} />
       )}
 
-      <FavButton catId={cat.id} />
+      
     </div>
   );
 };

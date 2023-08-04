@@ -18,3 +18,8 @@ export interface Cat {
     gender: string;
     breed: string;
 }
+
+export interface LikedCats {
+    user_id: string;
+    cat_id: string;
+}

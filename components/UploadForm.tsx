@@ -29,12 +29,6 @@ const UploadForm = () => {
     },
   });
 
-  const onClick = () => {
-    if (!user) {
-      return authModal.onOpen();
-    }
-  };
-
   const onSubmit: SubmitHandler<FieldValues> = async (values) => {
     //uploading form data to supabase bucket and database record
 
@@ -43,9 +37,14 @@ const UploadForm = () => {
 
       const imageFile = values.image?.[0];
 
-      if (!imageFile || !user) {
+      if (!imageFile) {
         toast.error("Missing fields");
         return;
+      }
+
+      if (!user){
+        toast.error("Login first to upload data");
+        return authModal.onOpen();
       }
 
       const uniqueID = uniqid();

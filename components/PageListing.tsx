@@ -13,7 +13,7 @@ const PageListing: React.FC<PageListingProps> = ({ cats }) => {
   } 
   else {
     return (
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:gri-cols-5 2xl:grid-cols-6 gap-4 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:gri-cols-5 2xl:grid-cols-6 gap-4 mt-10">
         {cats.map((item) => (
           <CatItem key={item.id} onClick={() => {}} cat={item} />
         ))}
