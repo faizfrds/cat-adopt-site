@@ -98,7 +98,7 @@ const UploadForm = () => {
             id="name"
             disabled={isLoading}
             {...register("name", { required: true })}
-            placeholder="e.g. mio, lulu,..."
+            placeholder="E.g. mio, lulu,..."
           />
         </p>
 
@@ -109,7 +109,7 @@ const UploadForm = () => {
             type="number"
             disabled={isLoading}
             {...register("age", { required: true })}
-            placeholder="(if less than 1 year old, enter 0)"
+            placeholder="(If less than 1 year old, enter 0)"
           />
         </p>
 
@@ -126,12 +126,22 @@ const UploadForm = () => {
         </div>
 
         <p className="text-neutral-600">
+          Contact Details
+          <Input
+            id="contact"
+            disabled={isLoading}
+            {...register("tel", { required: true })}
+            placeholder="Email or Phone Number"
+          />
+        </p>
+
+        <p className="text-neutral-600">
           Breed
           <Input
             id="breed"
             disabled={isLoading}
             {...register("breed", { required: true })}
-            placeholder="angora, bengal,..."
+            placeholder="Angora, Bengal,..."
           />
         </p>
 

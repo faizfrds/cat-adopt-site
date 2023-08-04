@@ -39,12 +39,9 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
       className="relative group flex flex-col rounded-md items-center overflow-hidden bg-neutral-400/5 cursor-pointer transition shadow-lg shadow-black h-[40vh]"
     >
       <div className="relative aspect-square w-full h-full overflow-hidden">
-        <Image
-          className="object-cover"
-          src={imagePath || "/images/marquee-pic.jpeg"}
-          fill
-          alt="Image"
-        />
+  
+
+        <img src={imagePath || "/images/marquee-pic.jpeg"} className="object-cover w-full h-full" />
       </div>
 
       <div className="flex flex-col items-start w-full lg:p-4 p-1 gap-y-1 text-cyan-700 text-bold bg-white">

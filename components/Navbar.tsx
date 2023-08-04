@@ -193,19 +193,25 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                   size={30}
                 />
               </button>
-              <div className="pl-12 mt-10 mb-10 text-3xl">
+              <div className="pl-12 mt-10 mb-10 text-2xl">
                 <button
-                  onClick={() => router.push("/upload")}
+                  onClick={() => {
+                    setIsOpen(false);
+                    router.push("/cats");
+                  }}
                   className="group py-7 flex items-center"
                 >
-                  Upload Adoption
+                  All Cats
                   <HiArrowSmRight />
                 </button>
                 <button
-                  onClick={() => router.push("/")}
+                  onClick={() => {
+                    setIsOpen(false);
+                    router.push("/upload");
+                  }}
                   className="group py-7 flex items-center"
                 >
-                  Breeds
+                  Upload Adoption Form
                   <HiArrowSmRight />
                 </button>
                 <button

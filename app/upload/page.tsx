@@ -41,13 +41,8 @@ export default function Upload() {
         )}
 
         <div className="flex lg:pt-10 pt-4 gap-x-2">
-          <div className="lg:h-[80vh] md:h-[60vh] h-[50vh] lg:w-8/12 w-screen rounded-lg relative overflow-hidden flex flex-col">
-            <Image
-              className="object-cover"
-              src={"/images/taro-header.png"}
-              fill
-              alt="Image"
-            />
+          <div className="lg:h-[80vh] md:h-[60vh] h-[50vh] lg:w-8/12 w-screen rounded-lg static overflow-hidden flex flex-col">
+            <img src="/images/taro-header.png" className="w-full h-full object-cover"/>
           </div>
 
           <div className="h-fit w-4/12 border border-neutral-400 rounded-md p-4 lg:block hidden">
@@ -58,11 +53,14 @@ export default function Upload() {
           </div>
         </div>
 
-        <div className="h-20 mb-5 border border-neutral-300 lg:w-8/12 px-4">
+        <div className="h-fit my-2 p-3 rounded-lg border border-neutral-300 lg:w-8/12 px-4 justify-start">
           
-          <h1>
+          <h1 className="text-2xl text-cyan-700">
             Why You Should Adopt
           </h1>
+          <p className="text-sm pt-1">
+              Kucing ngeong
+          </p>
         </div>
       </div>
     </div>

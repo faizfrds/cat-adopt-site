@@ -17,7 +17,7 @@ export default async function cats() {
           Cats looking for homes
         </h3>
 
-        <div className="mt-2 mb-7 px-6">
+        <div className="flex justify-center pb-5">
           <PageListing cats={cats} />
         </div>
       </div>
