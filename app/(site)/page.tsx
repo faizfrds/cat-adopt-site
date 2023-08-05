@@ -23,7 +23,7 @@ const Home = async () => {
         </Link>
         <Link href="/upload">
           <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600">
-            Upload Adoption
+            Upload
           </Button>
         </Link>
         <Link href="/fav">
