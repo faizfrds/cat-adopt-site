@@ -10,17 +10,15 @@ import { usePathname, useRouter } from "next/navigation";
 
 interface CatItemProps {
   cat: Cat;
-  onClick: (id: string) => void;
 }
 
-const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
+const CatItem: React.FC<CatItemProps> = ({ cat }) => {
   const imagePath = useLoadImage(cat);
   const { user } = useUser();
   const pathname = usePathname();
 
   return (
     <div
-      onClick={() => onClick(cat.id)}
       className=" group flex flex-col rounded-md items-center overflow-hidden bg-neutral-400/5 cursor-pointer transition shadow-lg shadow-black md:h-[40vh] h-[35vh]"
     >
       <div className="static h-full w-full overflow-hidden">
