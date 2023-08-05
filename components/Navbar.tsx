@@ -8,6 +8,7 @@ import {
   HiOutlineChevronUp,
   HiOutlineX,
   HiArrowSmRight,
+  HiHome
 } from "react-icons/hi";
 import { usePathname } from "next/navigation";
 import { useLayoutEffect, useMemo, useState, useEffect } from "react";
@@ -87,9 +88,11 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
         >
           <div className="flex items-center justify-between">
             <div className="text-cyan-600 font-bold p-4 flex items-center">
-              <a className="text-3xl md:mr-20" href="/">
+              <a className="text-3xl mr-12" href="/">
                 Cats4You
               </a>
+
+              <HiHome onClick={() => {router.push("/"); router.refresh()}} className="hidden md:flex mr-4 hover:cursor-pointer" size={30}/>
 
               <button
                 onClick={() => setIsOpen((prev) => !prev)}
