@@ -14,7 +14,7 @@ const getCatHome = async (): Promise<Cat[]> => {
         .from('cat')
         .select('name, image_path')
         .order('created_at', {ascending: true})
-        .limit (5);
+        .limit (4);
     
     if (error) {
         console.log(error);

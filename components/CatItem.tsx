@@ -9,13 +9,13 @@ import { useUser } from "@/hooks/useUser";
 import { useEffect, useState } from "react";
 import RemoveButton from "./RemoveButton";
 import { usePathname, useRouter } from "next/navigation";
+import Modal from "./Modal";
 
 interface CatItemProps {
   cat: Cat;
-  onClick: (id: string) => void;
 }
 
-const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
+const CatItem: React.FC<CatItemProps> = ({ cat }) => {
   const imagePath = useLoadImage(cat);
   const [owner, setOwner] = useState(false);
   const [button, setButtons] = useState(true);
@@ -33,13 +33,26 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
     }
   });
 
+  const onOpen = () => {
+
+    return(
+      <div className="static w-100 h-100 bg-black text-white">
+          HELLo
+      </div>
+    )
+  }
+
+  const router = useRouter();
+
+
   return (
-    <div
-      onClick={() => onClick(cat.id)}
-      className="lg:relative group flex flex-col rounded-md items-center overflow-hidden bg-neutral-400/20 cursor-pointer transition shadow-lg shadow-black lg:h-[40vh] h-[50vh]"
-    >
-      <div className="static w-full h-full overflow-hidden">
-        <img src={imagePath || "/images/marquee-pic.jpeg"} className="object-cover w-full h-full" />
+    <div className="lg:relative group flex flex-col rounded-md items-center overflow-hidden bg-neutral-400/20 cursor-pointer transition shadow-lg shadow-black lg:h-[40vh] h-[50vh]">
+
+      <div onClick={() => router.push("/uniqid")} className="static w-full h-full overflow-hidden">
+        <img
+          src={imagePath || "/images/marquee-pic.jpeg"}
+          className="object-cover w-full h-full"
+        />
       </div>
 
       <div className="flex flex-col items-start w-full lg:p-4 p-1 gap-y-1 text-cyan-700 text-bold bg-white">
@@ -56,9 +69,7 @@ const CatItem: React.FC<CatItemProps> = ({ cat, onClick }) => {
           <RemoveButton catId={cat.id} />
         </div>
       ) : (
-        
         <FavButton catId={cat.id} />
-        
       )}
     </div>
   );

@@ -18,7 +18,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ cats }) => {
     return <div className="mt-4 text-neutral-400">No cats saved yet...</div>;
   } else {
     return (
-      <div className="lg:w-9/12 w-screen px-3 pb-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:gri-cols-5 2xl:grid-cols-6 gap-4 mt-10 text-black">
+      <div className="lg:w-8/12 w-screen px-3 pb-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 text-black">
         {cats.map((item) => (
           <CatItem key={item.id} onClick={() => {}} cat={item} />
         ))}

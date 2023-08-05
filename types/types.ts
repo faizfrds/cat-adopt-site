@@ -17,6 +17,7 @@ export interface Cat {
     age: number;
     gender: string;
     breed: string;
+    contact: string;
 }
 
 export interface LikedCats {

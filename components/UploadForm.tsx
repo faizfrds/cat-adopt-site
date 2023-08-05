@@ -69,6 +69,7 @@ const UploadForm = () => {
         name: values.name,
         age: values.age,
         gender: values.gender,
+        contact: values.contact,
         breed: values.breed,
         image_path: imageData.path,
       });
@@ -130,7 +131,7 @@ const UploadForm = () => {
           <Input
             id="contact"
             disabled={isLoading}
-            {...register("tel", { required: true })}
+            {...register("contact", { required: true })}
             placeholder="Email or Phone Number"
           />
         </p>
