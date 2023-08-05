@@ -42,7 +42,7 @@ const CatItem: React.FC<CatItemProps> = ({ cat }) => {
       {details ? (
         <div className="flex flex-col p-4 w-full">
           <HiX
-            className="lg:absolute lg:top-2 lg:right-2 absolute right-10"
+            className="lg:absolute lg:top-2 lg:right-2 right-20"
             onClick={() => {
               setDetails(false);
             }}

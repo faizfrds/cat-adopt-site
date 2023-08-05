@@ -13,7 +13,7 @@ const getCat = async (): Promise<Cat[]> => {
     const { data, error } = await supabase
         .from('cat')
         .select('*')
-        .order('created_at', {ascending: true});
+        .order('age', {ascending: true});
     
     if (error) {
         console.log(error);

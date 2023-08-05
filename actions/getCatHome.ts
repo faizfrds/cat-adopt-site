@@ -13,7 +13,7 @@ const getCatHome = async (): Promise<Cat[]> => {
     const { data, error } = await supabase
         .from('cat')
         .select('name, image_path')
-        .order('created_at', {ascending: true})
+        .order('created_at', {ascending: false})
         .limit (4);
     
     if (error) {
