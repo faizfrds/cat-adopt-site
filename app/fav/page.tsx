@@ -18,7 +18,7 @@ const Liked = async () => {
         Liked
       </h1>
 
-      <div className="mt-2 mb-7 px-6">
+      <div className="flex justify-center pb-5">
         <LikedCats cats={cats} />
       </div>
     </div>

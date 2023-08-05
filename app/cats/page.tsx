@@ -12,7 +12,7 @@ export default async function cats() {
     <div className="flex justify-center w-screen h-fit bg-auto bg-neutral-50">
       <div className="lg:w-3/4 w-11/12">
         
-        <h1 className="text-neutral-600 text-5xl pt-20">
+        <h1 className="text-neutral-600 text-5xl md:pt-20 pt-10">
           Adopt a Cat Today
         </h1>
         <h3 className="text-neutral-400 text-lg pt-4">
