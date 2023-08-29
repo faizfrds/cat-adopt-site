@@ -74,7 +74,7 @@ const FavButton: React.FC<FavButtonProps> = ({ catId }) => {
       } 
       else {
         setIsLiked(true);
-        toast.success("Saved to favourites");
+        toast.success("Added to favourites");
       }
     }
 
