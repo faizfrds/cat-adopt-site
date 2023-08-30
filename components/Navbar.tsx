@@ -33,6 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
   const router = useRouter();
   const authModal = useAuthModal();
   const navbarShow = useNavbar();
+  const navOpen = useNavbar((state) => state.onToggle)
 
 
   const supabaseClient = useSupabaseClient();
@@ -68,16 +69,12 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (window.innerWidth > 1023) {
       if (pathname !== "/") navbarShow.onClose;
       else {
-        navbarShow.onOpen;
+        navOpen();
       }
-    } else {
-      navbarShow.onClose();
-      console.log("HLLELOEJFEFIJEO")
-      console.log(navbarShow.isOpen)
     }
   }, []);
 
