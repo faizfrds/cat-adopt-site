@@ -9,12 +9,15 @@ import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useSessionContext } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
+import { twMerge } from "tailwind-merge";
 
 interface FavButtonProps {
   catId: string;
+  className?: string;
+  children?: React.ReactNode;
 }
 
-const FavButton: React.FC<FavButtonProps> = ({ catId }) => {
+const FavButton: React.FC<FavButtonProps> = ({ catId, className, children }) => {
   const { user } = useUser();
   const router = useRouter();
   const { supabaseClient } = useSessionContext();
@@ -43,7 +46,6 @@ const FavButton: React.FC<FavButtonProps> = ({ catId }) => {
     fetchData();
   }, [catId, supabaseClient, user?.id]);
 
-  const Icon = isLiked ? HiHeart : HiOutlineHeart;
 
   const handleLike = async () => {
 
@@ -61,6 +63,7 @@ const FavButton: React.FC<FavButtonProps> = ({ catId }) => {
       } 
       else {
         setIsLiked(false);
+        toast.success("Removed from favourites")
       }
     } 
     else {
@@ -81,11 +84,16 @@ const FavButton: React.FC<FavButtonProps> = ({ catId }) => {
     router.refresh();
   };
 
+  const Icon = isLiked ? HiHeart : HiOutlineHeart;
+
   return (
     <button
-      className=" lg:absolute lg:top-3 lg:right-2 rounded-full p-2 text-red-500/90 lg:bg-neutral-100/70 hover:scale-105 hover:bg-white"
+      className={twMerge(
+        "flex items-center gap-x-2", className
+      )}
       onClick={handleLike}
     >
+      {children}
       <Icon color="#f23359" size={30} />
     </button>
   );
