@@ -20,7 +20,7 @@ import Button from "./Button";
 import Header from "./Header";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
-import Link from "next/link";
+import useNavbar from "@/hooks/useNavbar";
 
 interface NavbarProps {
   className?: string;
@@ -28,10 +28,11 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+
 
   const router = useRouter();
   const authModal = useAuthModal();
+  const navbarShow = useNavbar();
 
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
@@ -40,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
 
   const checkPath = () => {
     if (pathname == "/") {
-      return <Header isOpen={isOpen} />;
+      return <Header />;
     }
   };
 
@@ -51,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
     if (error) {
       toast.error(error.message);
     } else {
-      setIsOpen(false);
+      navbarShow.onClose;
       router.push("/");
       toast.success("Logged Out");
     }
@@ -59,23 +60,28 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
 
   const checkLogin = () => {
     if (!user) {
-      return authModal.onOpen();
+      return authModal.onOpen;
     } else {
-      setIsOpen(false);
+      navbarShow.onClose;
       router.push("/fav");
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (window.innerWidth > 1023) {
-      if (pathname !== "/") setIsOpen(false);
+      if (pathname !== "/") navbarShow.onClose;
       else {
-        setIsOpen(true);
+        navbarShow.onOpen;
       }
     } else {
-      setIsOpen(false);
+      navbarShow.onClose;
     }
-  }, []);
+  }, [children]);
+
+
+  console.log(navbarShow.isOpen)
+
+
 
   return (
     <>
@@ -92,14 +98,14 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                 Cats4You
               </a>
 
-              <HiHome onClick={() => {router.push("/"); router.refresh()}} className="hidden md:flex mr-4 hover:cursor-pointer" size={30}/>
+              <HiHome onClick={() => {router.push("/"); {navbarShow.onOpen}}} className="hidden md:flex mr-4 hover:cursor-pointer" size={30}/>
 
               <button
-                onClick={() => setIsOpen((prev) => !prev)}
+                onClick={navbarShow.onToggle}
                 className="group hidden lg:flex text-white font-bold hover:text-cyan-600 transition gap-x-2 text-lg"
               >
                 More About Cats
-                {!isOpen ? (
+                {!navbarShow.isOpen ? (
                   <HiOutlineChevronDown
                     className="group-hover:translate-y-0.5"
                     size={25}
@@ -120,7 +126,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
               </button>
 
               <button
-                onClick={() => setIsOpen((prev) => !prev)}
+                onClick={navbarShow.onToggle}
                 className="flex lg:hidden rounded-full p-2 bg-black justify-center hover:opacity-75 hover:scale-105 hover:bg-cyan-900 transition text-white gap-x-2"
               >
                 <HiMenu className="text-white transition" size={25} />
@@ -149,7 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                     <div>
                       <Button onClick={authModal.onOpen}>Login</Button>
                     </div>
-                    x
+                    
                   </>
                 </div>
               )}
@@ -157,13 +163,12 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
           </div>
         </div>
 
-        {isOpen ? (
+        {navbarShow.isOpen ? (
           <>
             <div className="hidden lg:flex justify-between absolute w-full h-fit mt-24 bg-cyan-600 text-white text-lg">
-              <div className="w-8/12 flex justify-center py-4 gap-x-20 ml-5">
+              <div className="w-8/12 flex justify-center py-4 gap-x-20 ml-5" onClick={navbarShow.onClose}>
                 <button
                   onClick={() => {
-                    setIsOpen(false);
                     router.push("/cats");
                   }}
                 >
@@ -171,7 +176,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                 </button>
                 <button
                   onClick={() => {
-                    setIsOpen(false);
+                    navbarShow.onClose;
                     router.push("/upload");
                   }}
                 >
@@ -180,7 +185,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
 
                 <button
                   onClick={() => {
-                    setIsOpen(false);
+                    navbarShow.onClose;
                     router.push("/");
                   }}
                 >
@@ -190,7 +195,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
             </div>
 
             <div className="lg:hidden w-full h-screen bg-cyan-600 text-white fixed">
-              <button onClick={() => setIsOpen((prev) => !prev)}>
+              <button onClick={navbarShow.onClose}>
                 <HiOutlineX
                   className="text-white absolute top-[30px] right-[30px] inline-flex appearance-none items-center justify-center rounded-full focus:outline"
                   size={30}
@@ -199,7 +204,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
               <div className="pl-12 mt-10 mb-10 text-2xl">
                 <button
                   onClick={() => {
-                    setIsOpen(false);
+                    navbarShow.onClose;
                     router.push("/cats");
                   }}
                   className="group py-7 flex items-center"
@@ -209,7 +214,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                 </button>
                 <button
                   onClick={() => {
-                    setIsOpen(false);
+                    navbarShow.onClose;
                     router.push("/upload");
                   }}
                   className="group py-7 flex items-center"

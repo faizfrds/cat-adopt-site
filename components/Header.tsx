@@ -9,7 +9,7 @@ interface HeaderProps {
   isOpen?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ className, isOpen }) => {
+const Header: React.FC<HeaderProps> = ({ className }) => {
 
   return (
     <div className="flex justify-center w-screen md:h-[50vh] h-fit bg-auto bg-[url('/images/marquee-pic.png')] items-center md:p-2 py-24">
