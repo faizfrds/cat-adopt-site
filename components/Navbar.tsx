@@ -34,6 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
   const authModal = useAuthModal();
   const navbarShow = useNavbar();
 
+
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
 
@@ -67,20 +68,18 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (window.innerWidth > 1023) {
       if (pathname !== "/") navbarShow.onClose;
       else {
         navbarShow.onOpen;
       }
     } else {
-      navbarShow.onClose;
+      navbarShow.onClose();
+      console.log("HLLELOEJFEFIJEO")
+      console.log(navbarShow.isOpen)
     }
-  }, [children]);
-
-
-  console.log(navbarShow.isOpen)
-
+  }, []);
 
 
   return (
@@ -98,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
                 Cats4You
               </a>
 
-              <HiHome onClick={() => {router.push("/"); {navbarShow.onOpen}}} className="hidden md:flex mr-4 hover:cursor-pointer" size={30}/>
+              <HiHome onClick={() => {router.push("/")}} className="hidden md:flex mr-4 hover:cursor-pointer" size={30}/>
 
               <button
                 onClick={navbarShow.onToggle}
