@@ -81,7 +81,6 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
     }
   }, []);
 
-
   return (
     <>
       <div className="flex justify-center stick bg-black">
