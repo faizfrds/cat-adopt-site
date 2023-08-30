@@ -17,7 +17,6 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <div className="flex text-white justify-center lg:text-6xl text-4xl font-bold text-center">
           Find your next fur friend
         </div>
-
         {/* <div className="lg:flex hidden justify-center">
             <SearchBar />
         </div> */} {/* SEARCH FUNCTIONALITY NOT FUNCTIONAL YET*/}
