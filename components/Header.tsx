@@ -12,24 +12,24 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ className, isOpen }) => {
 
   return (
-    <div className="flex justify-center w-screen md:h-[50vh] h-fit md:pb-10 pb-20 bg-auto bg-[url('/images/marquee-pic.png')]">
+    <div className="flex justify-center w-screen md:h-[50vh] h-fit bg-auto bg-[url('/images/marquee-pic.png')] items-center md:p-2 py-24">
       <div className="w-8/12">
-        <div className="flex text-white justify-center text-4xl md:pt-48 pt-32 text-center">
-          Find your next fur buddy
+        <div className="flex text-white justify-center lg:text-6xl text-4xl font-bold text-center">
+          Find your next fur friend
         </div>
 
-        <div className="lg:flex hidden justify-center">
+        {/* <div className="lg:flex hidden justify-center">
             <SearchBar />
-        </div>
+        </div> */} {/* SEARCH FUNCTIONALITY NOT FUNCTIONAL YET*/}
 
-        <div className="flex lg:hidden">
+        {/* <div className="flex lg:hidden">
             
           {!isOpen ? (
             <SearchBar />
           ) : (
             <></>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

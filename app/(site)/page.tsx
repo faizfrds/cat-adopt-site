@@ -15,27 +15,29 @@ const Home = async () => {
     <div className="flex-col justify-center text-center pb-2">
       <div className="bg-cyan-600 w-screen h-3" />
 
-      <div className="lg:hidden pt-4 md:px-8 px-3 grid md:grid-cols-4 grid-cols-2 md:gap-y-2 md:gap-x-2 gap-x-1 gap-y-1">
-        <Link href="/cats">
-          <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600">
-            All Cats
-          </Button>
-        </Link>
-        <Link href="/upload">
-          <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600">
-            Upload
-          </Button>
-        </Link>
-        <Link href="/fav">
-          <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600">
-            View My Liked
-          </Button>
-        </Link>
-        <Link href="/">
-          <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600">
-            Support
-          </Button>
-        </Link>
+      <div className="lg:justify-center lg:flex">
+        <div className="lg:w-6/12 lg:pt-8 pt-4 md:px-8 px-3 grid md:grid-cols-4 grid-cols-2 md:gap-y-2 md:gap-x-2 gap-x-1 gap-y-1">
+          <Link href="/cats">
+            <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600 shadow-neutral-800 shadow-lg">
+              All Cats
+            </Button>
+          </Link>
+          <Link href="/upload">
+            <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600 shadow-neutral-800 shadow-lg">
+              Upload
+            </Button>
+          </Link>
+          <Link href="/fav">
+            <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600 shadow-neutral-800 shadow-lg">
+              View My Liked
+            </Button>
+          </Link>
+          <Link href="/">
+            <Button className="bg-neutral-200 text-neutral-700 border border-neutral-600 shadow-neutral-800 shadow-lg">
+              Support
+            </Button>
+          </Link>
+        </div>
       </div>
 
       <div className="text-4xl text-cyan-600 lg:pt-8 pt-5 flex-col flex">
