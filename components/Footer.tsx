@@ -8,18 +8,13 @@ export default function Footer() {
         <div className="mx-auto w-8/12 p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
-              <a href="https://flowbite.com/" className="flex items-center">
-                <img
-                  src="/images/111.jpg"
-                  className="h-8 mr-3"
-                  alt="FlowBite Logo"
-                />
+              <a href="https://github.com/faizfrds/cat-adopt-site" className="flex items-center">
                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
                   Cats4You
                 </span>
               </a>
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div className="grid grid-cols-2 gap-8 ">
               <div>
                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                   Resources
@@ -53,23 +48,6 @@ export default function Footer() {
                   <li>
                     <a href="/" className="hover:underline">
                       YouTube
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Legal
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Privacy Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Terms &amp; Conditions
                     </a>
                   </li>
                 </ul>
