@@ -57,7 +57,7 @@ export default function Footer() {
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <div className="text-neutral-400 text-sm">
             <div className="flex justify-center gap-x-2">
-              <p className="mr-3">Inspired by the cats without a home, created by Faiz Firdaus - 2023</p>
+              <p className="mr-3">Inspired by the cats without a home. Created by Faiz Firdaus - 2023</p>
               <a href="https://github.com/faizfrds" target="#">
                 <AiFillGithub
                   size={18}
