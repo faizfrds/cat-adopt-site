@@ -63,10 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
   const checkLogin = () => {
     if (!user) {
       return authModal.onOpen;
-    } else {
-      navbarShow.onClose;
-      router.push("/fav");
-    }
+    } 
   };
 
   useEffect(() => {
@@ -116,8 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({ className, children }) => {
 
             <div className="flex gap-x-3 items-center">
               <button className="flex rounded-full p-2 bg-black justify-center hover:scale-105 hover:bg-white transition text-white hover:text-red-500 gap-x-2">
-                <HiHeart onClick={checkLogin} size={25} />
-                
+                <HiHeart onClick={() => router.push("/fav")} size={25} />
               </button>
 
               <button
