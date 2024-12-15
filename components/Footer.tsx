@@ -14,45 +14,6 @@ export default function Footer() {
                 </span>
               </a>
             </div>
-            <div className="grid grid-cols-2 gap-8 ">
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Resources
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="/" className="hover:underline">
-                      Adopting Guide
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://tailwindcss.com/"
-                      className="hover:underline"
-                    >
-                      FAQ
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Follow us
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="/" className="hover:underline ">
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/" className="hover:underline">
-                      YouTube
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <div className="text-neutral-400 text-sm">
